@@ -48,3 +48,30 @@ Maecenas blandit, nisi sit amet pulvinar tincidunt, nibh orci fringilla magna, n
 Morbi augue magna, pulvinar a dapibus id, vestibulum ac enim. Morbi a tortor nec orci condimentum sodales. Nam ullamcorper at nisl sollicitudin cursus. Fusce in odio dolor. Pellentesque non ligula tellus. Ut dignissim ultrices risus eget ultrices. Etiam ut maximus ipsum. Nam lobortis turpis non arcu tincidunt ornare. Mauris tempus magna purus, sed lobortis est faucibus nec. Sed porta condimentum est in bibendum. Nulla nibh diam, tincidunt sed nulla eget, placerat vulputate eros.`
 
 console.log(sentence.split(" ").length)
+
+let count=0
+let index=sentence.indexOf(`et`)
+
+while(index!=-1){
+    count++
+    index=sentence.indexOf(`et`,index+1)
+}
+console.log(count)
+
+// ###Bonus 2
+
+let phraseToCheck="Amor, Roma".replace(/[^a-zA-Z0-9]/g,'').toLowerCase()
+let start=0,end=phraseToCheck.length-1
+while(start<end){
+    if(phraseToCheck[start]!=phraseToCheck[end]){
+        console.log("Not Palindrome")
+        break
+    }else{
+        start++
+        end--
+    }
+}
+
+if(start>=end){
+    console.log("Palindrome")
+}
